@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Little Light | For Ailsa</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Little Light | For Ailsa</title>
+    <meta
+      name="description"
+      content="A gentle little space of encouragement, breathing, and love for Ailsa."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -20,298 +26,533 @@
               "on-primary": "#ffffff",
               "on-background": "#1f1b18",
               "primary-container": "#f7d6d0",
-              "tertiary-fixed": "#dee3e9",
-              "on-secondary-fixed-variant": "#3f4945",
-              "primary": "#715954",
+              tertiary: "#595f64",
+              primary: "#715954",
               "on-primary-container": "#745b57",
-              "inverse-primary": "#dfbfba",
-              "surface-dim": "#e1d8d3",
-              "secondary-fixed-dim": "#bfc9c3",
-              "on-primary-fixed": "#291714",
               "primary-fixed": "#fcdbd5",
               "surface-variant": "#eae1dc",
               "surface-container-low": "#fbf2ed",
-              "secondary-fixed": "#dbe5df",
-              "on-tertiary": "#ffffff",
-              "on-error-container": "#93000a",
-              "tertiary-container": "#d9dee4",
               "on-surface": "#1f1b18",
-              "tertiary-fixed-dim": "#c2c7cd",
               "surface-container-highest": "#eae1dc",
               "on-surface-variant": "#4f4442",
-              "tertiary": "#595f64",
-              "on-primary-fixed-variant": "#58413d",
-              "secondary": "#57615c",
+              secondary: "#57615c",
               "surface-container-high": "#efe6e1",
-              "surface-bright": "#fff8f5",
-              "background": "#fff8f5",
-              "on-error": "#ffffff",
+              background: "#fff8f5",
               "on-secondary-container": "#5b6560",
-              "on-tertiary-fixed-variant": "#42474c",
-              "on-tertiary-fixed": "#171c21",
               "surface-tint": "#715954",
               "outline-variant": "#d3c3c0",
-              "error-container": "#ffdad6",
-              "surface": "#fff8f5",
-              "surface-container-lowest": "#ffffff",
-              "on-secondary": "#ffffff",
-              "on-secondary-fixed": "#151d1a",
+              surface: "#fff8f5",
               "secondary-container": "#d8e2dc",
-              "outline": "#817472",
+              outline: "#817472",
               "surface-container": "#f5ece7",
-              "on-tertiary-container": "#5c6267",
               "primary-fixed-dim": "#dfbfba",
               "inverse-surface": "#34302c",
-              "error": "#ba1a1a",
               "inverse-on-surface": "#f8efea"
             },
             fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Plus Jakarta Sans"],
-              "label": ["Plus Jakarta Sans"]
+              headline: ["Noto Serif"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Plus Jakarta Sans"]
             },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
+            boxShadow: {
+              glow: "0 20px 60px rgba(113, 89, 84, 0.12)",
+              soft: "0 10px 30px rgba(84, 56, 51, 0.08)"
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px"
+            }
+          }
+        }
+      };
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        @keyframes drift {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(10px, -15px) rotate(5deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
-        .animate-drift { animation: drift 8s ease-in-out infinite; }
-
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            40% { transform: scale(1.4); opacity: 0.8; }
-            60% { transform: scale(1.4); opacity: 0.8; }
-        }
-        .animate-breathe { animation: breathe 10s ease-in-out infinite; }
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(252, 219, 213, 0.65), transparent 28%),
+          radial-gradient(circle at 85% 10%, rgba(216, 226, 220, 0.55), transparent 24%),
+          linear-gradient(180deg, #fffaf7 0%, #fff8f5 45%, #fff5f1 100%);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.58);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      @keyframes drift {
+        0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+        50% { transform: translate3d(10px, -15px, 0) rotate(5deg); }
+        100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      }
+      @keyframes breathe {
+        0%, 100% { transform: scale(1); opacity: 0.45; }
+        40%, 60% { transform: scale(1.42); opacity: 0.85; }
+      }
+      @keyframes pulseText {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+      @keyframes floatUp {
+        0% { transform: translateY(10px) scale(0.95); opacity: 0; }
+        12% { opacity: 1; }
+        100% { transform: translateY(-70px) scale(1.05); opacity: 0; }
+      }
+      .animate-drift { animation: drift 8s ease-in-out infinite; }
+      .animate-breathe { animation: breathe 10s ease-in-out infinite; }
+      .animate-pulse-text { animation: pulseText 3.5s ease-in-out infinite; }
+      .petal-burst {
+        position: absolute;
+        pointer-events: none;
+        animation: floatUp 2.8s ease-out forwards;
+        filter: drop-shadow(0 10px 16px rgba(113, 89, 84, 0.12));
+      }
+      .hero-glow {
+        background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0));
+      }
     </style>
-</head>
-<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
-<header class="sticky top-0 w-full z-50 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xl shadow-sm shadow-rose-900/5 flex justify-between items-center px-8 py-4 max-w-full mx-auto">
-<div class="text-2xl font-headline italic text-rose-900 dark:text-rose-100">Little Light</div>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="text-rose-900 dark:text-rose-100 font-semibold font-label tracking-tight" href="#">Home</a>
-<a class="text-rose-700/70 dark:text-rose-300/70 hover:bg-rose-50/50 dark:hover:bg-rose-950/50 transition-colors px-3 py-1 rounded-full font-label tracking-tight" href="#encouragement">Encouragement</a>
-<a class="text-rose-700/70 dark:text-rose-300/70 hover:bg-rose-50/50 dark:hover:bg-rose-950/50 transition-colors px-3 py-1 rounded-full font-label tracking-tight" href="#relax">Relax</a>
-<a class="text-rose-700/70 dark:text-rose-300/70 hover:bg-rose-50/50 dark:hover:bg-rose-950/50 transition-colors px-3 py-1 rounded-full font-label tracking-tight" href="#week-14">Week 14</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-rose-700 p-2 rounded-full hover:bg-rose-50 transition-colors">mood</button>
-<img alt="Ailsa's Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed shadow-sm" data-alt="Close up portrait of a serene woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfqbtt4drM65EtWXTp2UdDItRWe48sbUxY_N0Bnc95w8ZULqtDQ4D2wu5bafrVoIBzfq4hSIT94UHdaxrFTDY_USG_4H7nxEyPAJMUyON_Fb0AbvJtaqG2I6LwBP1eP7shPpdkv7rQIenM07HZa0oKQYrTe86uuEmn7QwLYiywolnNSaVFZlzvWlhSrtv-WNuJpLrvT3q-qIznDBZpNubtYc09RPrQx26wl3h0k-mvtHiCE0ggrgqDZ8pkZuEx5no2Fz4iZvtE08c"/>
-</div>
-</header>
-<main class="max-w-7xl mx-auto px-6 pb-32">
-<!-- Hero Section -->
-<section class="relative min-h-[819px] flex flex-col justify-center items-start pt-12 pb-24 overflow-hidden">
-<div class="absolute top-0 right-0 -z-10 w-full md:w-2/3 h-full">
-<div class="absolute inset-0 bg-gradient-to-l from-transparent via-surface to-surface z-10"></div>
-<img alt="Ocean Breeze" class="w-full h-full object-cover rounded-bl-[10rem] opacity-40" data-alt="Soft morning light reflecting on calm ocean waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIm_wSVgCJ9Alknlarwkwr5IloXNkoEocoK1VZd0MowbeXQaaandajzdCrsEhYP2sMFDSciejjMXXV9aDtRBQbvfx_qlfySceHS1CMR6Wg_5mDsluNgr-IlG_1HTDsxCawf8uLbUogKFlLdkcDUrQy0l0QpXa70g50F9AZOxUcSyEMXxkuWdr9ybf25OZI8nEVA3vT4o4CXfUG5omIU0_cw9Inbe2qYoQOxReiWjoQjA9Y4PgDw-JsI0rQn_wTtUe_jlI0iPNmhA"/>
-</div>
-<div class="max-w-2xl space-y-8 relative z-20">
-<div class="inline-flex items-center gap-2 bg-primary-fixed/30 px-4 py-1.5 rounded-full text-primary font-medium text-sm animate-drift">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    Week 14 • Second Trimester
-                </div>
-<h1 class="text-5xl md:text-7xl font-headline text-on-surface leading-tight tracking-tight">
-                    Hi Ailsa, <br/>
-<span class="italic font-light">you are doing beautifully.</span>
-</h1>
-<p class="text-xl text-on-surface-variant font-light leading-relaxed max-w-lg">
-                    For you and our little one, with love. Take a moment to breathe, rest, and feel the light growing within.
-                </p>
-<div class="flex flex-wrap gap-4 pt-4">
-<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-medium shadow-xl shadow-primary/10 hover:scale-105 transition-transform" href="#encouragement">
-                        Today's Encouragement
-                    </a>
-<a class="glass-panel text-on-surface border border-white/40 px-8 py-4 rounded-full font-medium hover:bg-white/80 transition-colors" href="#relax">
-                        Take a Gentle Break
-                    </a>
-</div>
-</div>
-</section>
-<!-- Bento Layout for Cards -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
-<!-- Daily Encouragement - Large Card -->
-<section class="md:col-span-8 bg-surface-container-low rounded-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden group" id="encouragement">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-9xl">format_quote</span>
-</div>
-<div class="relative z-10">
-<h2 class="text-sm font-label uppercase tracking-widest text-outline mb-12">Daily Reflection</h2>
-<p class="text-3xl md:text-4xl font-headline italic leading-snug text-primary transition-all duration-500" id="encouragement-text">
-                        You are growing life with quiet strength. Your body is a sanctuary of love and infinite potential.
-                    </p>
-</div>
-<div class="mt-12 flex items-center justify-between relative z-10">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary-container text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</div>
-<span class="text-sm text-on-surface-variant italic">With all our love</span>
-</div>
-<button class="flex items-center gap-2 text-primary hover:bg-primary/5 px-4 py-2 rounded-full transition-colors font-medium">
-<span class="material-symbols-outlined">refresh</span>
-                        Next Message
-                    </button>
-</div>
-</section>
-<!-- Week 14 Card - Tall Card -->
-<section class="md:col-span-4 bg-secondary-container rounded-xl p-8 flex flex-col justify-between text-on-secondary-container relative overflow-hidden" id="week-14">
-<div class="absolute -bottom-10 -right-10 opacity-20 transform rotate-12">
-<span class="material-symbols-outlined text-[12rem]">child_care</span>
-</div>
-<div>
-<div class="text-6xl font-headline font-light mb-2">14</div>
-<div class="text-xl font-headline italic opacity-80">Weeks Pregnant</div>
-<div class="mt-8 space-y-4">
-<p class="text-lg leading-relaxed">
-                            A beautiful stage of growth, where energy may slowly begin to return.
+  </head>
+  <body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <header class="sticky top-0 z-50 mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6 lg:px-10">
+      <div class="glass-panel flex w-full items-center justify-between rounded-full border border-white/60 px-4 py-3 shadow-soft sm:px-6">
+        <div class="text-xl font-headline italic text-rose-900 sm:text-2xl">Little Light</div>
+        <nav class="hidden items-center gap-2 md:flex">
+          <a class="rounded-full px-4 py-2 font-label text-sm font-semibold tracking-tight text-rose-900 transition hover:bg-rose-50/70" href="#top">Home</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#encouragement">Encouragement</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#relax">Relax</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#love-note">Love Note</a>
+        </nav>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="music-toggle" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/80 text-rose-700 shadow-sm transition hover:scale-105 hover:bg-white" aria-label="Toggle gentle soundscape">
+            <span class="material-symbols-outlined">music_note</span>
+          </button>
+          <img
+            alt="Ailsa's Profile"
+            class="h-11 w-11 rounded-full border-2 border-primary-fixed object-cover shadow-sm"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfqbtt4drM65EtWXTp2UdDItRWe48sbUxY_N0Bnc95w8ZULqtDQ4D2wu5bafrVoIBzfq4hSIT94UHdaxrFTDY_USG_4H7nxEyPAJMUyON_Fb0AbvJtaqG2I6LwBP1eP7shPpdkv7rQIenM07HZa0oKQYrTe86uuEmn7QwLYiywolnNSaVFZlzvWlhSrtv-WNuJpLrvT3q-qIznDBZpNubtYc09RPrQx26wl3h0k-mvtHiCE0ggrgqDZ8pkZuEx5no2Fz4iZvtE08c"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="mx-auto max-w-7xl px-4 pb-28 sm:px-6 lg:px-8">
+      <section class="relative overflow-hidden pt-6 sm:pt-10 lg:pt-14">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+          <div class="relative z-10 max-w-2xl space-y-7 py-6 sm:py-10 lg:py-16">
+            <div class="inline-flex items-center gap-2 rounded-full bg-primary-fixed/60 px-4 py-2 text-sm font-medium text-primary shadow-sm animate-drift">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-primary"></span>
+              Week 14 • Second Trimester • Growing beautifully
+            </div>
+            <div class="space-y-5">
+              <h1 class="text-5xl leading-[0.95] tracking-tight text-on-surface sm:text-6xl lg:text-7xl xl:text-[5.4rem] font-headline">
+                Hi Ailsa,<br />
+                <span class="font-light italic">you are doing beautifully.</span>
+              </h1>
+              <p class="max-w-xl text-lg font-light leading-relaxed text-on-surface-variant sm:text-xl">
+                For you and our little one, with love. This little corner is here to offer a soft pause—something gentle, encouraging, and calm whenever you need it.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3 sm:gap-4">
+              <a class="rounded-full bg-primary px-7 py-4 font-medium text-on-primary shadow-glow transition hover:-translate-y-0.5 hover:scale-[1.02]" href="#encouragement">Today's Encouragement</a>
+              <a class="glass-panel rounded-full border border-white/50 px-7 py-4 font-medium text-on-surface transition hover:bg-white/85" href="#relax">Take a Gentle Break</a>
+            </div>
+            <div class="grid gap-3 pt-3 sm:grid-cols-3">
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
+                <div class="text-xs uppercase tracking-[0.22em] text-outline">Today’s tone</div>
+                <div class="mt-2 font-headline text-2xl italic text-primary">Soft & steady</div>
+              </div>
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
+                <div class="text-xs uppercase tracking-[0.22em] text-outline">Breathing</div>
+                <div class="mt-2 text-base font-medium text-on-surface">4 • 4 • 6 slow rhythm</div>
+              </div>
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
+                <div class="text-xs uppercase tracking-[0.22em] text-outline">Saved with care</div>
+                <div class="mt-2 text-base font-medium text-on-surface">Mood check stays on this device</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="hero-glow absolute inset-x-8 top-8 h-56 blur-3xl"></div>
+            <div class="relative overflow-hidden rounded-[2.5rem] border border-white/50 bg-white/35 p-3 shadow-glow backdrop-blur-xl sm:p-4">
+              <div class="relative overflow-hidden rounded-[2rem] min-h-[560px] sm:min-h-[640px]">
+                <img
+                  alt="Ocean Breeze"
+                  class="absolute inset-0 h-full w-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIm_wSVgCJ9Alknlarwkwr5IloXNkoEocoK1VZd0MowbeXQaaandajzdCrsEhYP2sMFDSciejjMXXV9aDtRBQbvfx_qlfySceHS1CMR6Wg_5mDsluNgr-IlG_1HTDsxCawf8uLbUogKFlLdkcDUrQy0l0QpXa70g50F9AZOxUcSyEMXxkuWdr9ybf25OZI8nEVA3vT4o4CXfUG5omIU0_cw9Inbe2qYoQOxReiWjoQjA9Y4PgDw-JsI0rQn_wTtUe_jlI0iPNmhA"
+                />
+                <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/10 to-white/70"></div>
+                <div class="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                  <div class="glass-panel rounded-[1.75rem] border border-white/60 p-5 shadow-soft sm:p-6">
+                    <div class="flex items-start justify-between gap-4">
+                      <div>
+                        <div class="text-xs uppercase tracking-[0.22em] text-outline">Little light journal</div>
+                        <p id="micro-note" class="mt-3 max-w-md text-base leading-relaxed text-on-surface-variant animate-pulse-text">
+                          Rest is not falling behind. It is part of how love makes room for new life.
                         </p>
-<div class="h-1 w-full bg-on-secondary-container/10 rounded-full overflow-hidden">
-<div class="h-full bg-on-secondary-container w-[35%] rounded-full"></div>
-</div>
-<p class="text-xs font-label uppercase tracking-tighter opacity-60">Journey Progress: 35%</p>
-</div>
-</div>
-<div class="mt-8 bg-white/30 backdrop-blur-md p-4 rounded-lg text-sm border border-white/20">
-<span class="font-bold block mb-1">Little One's Size:</span>
-                    As sweet and small as a lemon.
-                </div>
-</section>
-<!-- Relaxing Mini-Games: Breathing -->
-<section class="md:col-span-6 bg-surface-container-highest rounded-xl p-8 flex flex-col items-center justify-center text-center gap-8 min-h-[400px]" id="relax">
-<div>
-<h3 class="text-2xl font-headline mb-2 text-primary">Gentle Breath</h3>
-<p class="text-sm text-on-surface-variant">Follow the bloom to find your center</p>
-</div>
-<div class="relative flex items-center justify-center">
-<div class="w-48 h-48 bg-primary-container/40 rounded-full animate-breathe filter blur-2xl absolute"></div>
-<div class="w-40 h-40 border-2 border-primary/20 rounded-full flex items-center justify-center relative">
-<div class="w-32 h-32 bg-primary-fixed rounded-full animate-breathe flex items-center justify-center text-primary font-medium italic">
-                            Inhale
-                        </div>
-</div>
-</div>
-<div class="flex gap-4 text-xs font-label uppercase tracking-widest text-outline">
-<span>Inhale</span>
-<span>•</span>
-<span>Hold</span>
-<span>•</span>
-<span>Exhale</span>
-</div>
-</section>
-<!-- Relaxing Mini-Games: Petal Tapping -->
-<section class="md:col-span-6 bg-white rounded-xl p-8 flex flex-col relative overflow-hidden min-h-[400px]">
-<div class="mb-4">
-<h3 class="text-2xl font-headline text-primary">Petal Tapping</h3>
-<p class="text-sm text-on-surface-variant">Soft touches for a quiet mind</p>
-</div>
-<div class="flex-grow relative cursor-pointer">
-<!-- Decorative petals -->
-<div class="absolute top-10 left-1/4 w-12 h-12 bg-primary-fixed/40 rounded-full blur-sm animate-drift"></div>
-<div class="absolute bottom-20 right-1/3 w-16 h-16 bg-secondary-fixed/40 rounded-full blur-sm animate-drift" style="animation-delay: -2s"></div>
-<div class="absolute top-1/2 left-1/2 w-8 h-8 bg-tertiary-fixed/40 rounded-full blur-sm animate-drift" style="animation-delay: -4s"></div>
-<div class="absolute inset-0 flex items-center justify-center text-on-surface-variant/30 font-light italic">
-                        Tap anywhere to release kindness
+                      </div>
+                      <div class="rounded-full bg-rose-50/80 px-3 py-1 text-xs font-medium text-rose-700">Updated daily</div>
                     </div>
-<!-- Interactive petals (visual placeholders for the prompt) -->
-<div class="absolute top-1/3 right-1/4 w-10 h-14 bg-primary-fixed/60 rounded-[100%_0%_100%_0%/100%_0%_100%_0%] rotate-45 transform hover:scale-110 transition-transform"></div>
-<div class="absolute bottom-1/4 left-1/3 w-12 h-16 bg-secondary-fixed/60 rounded-[0%_100%_0%_100%/0%_100%_0%_100%] -rotate-12 transform hover:scale-110 transition-transform"></div>
-</div>
-</section>
-<!-- Love Note - Asymmetric Card -->
-<section class="md:col-span-7 bg-surface-container rounded-xl p-8 md:p-12 relative overflow-hidden">
-<div class="flex flex-col md:flex-row gap-8 items-center">
-<div class="w-full md:w-1/2">
-<h3 class="text-3xl font-headline mb-6 italic text-primary">A Note for You</h3>
-<p class="text-lg leading-relaxed text-on-surface-variant font-light italic">
-                            "Thank you for everything you are doing for our little family. Seeing your strength and grace as you grow our little light fills my heart with so much gratitude. You are the heartbeat of our home."
-                        </p>
-<div class="mt-8 font-headline text-primary text-xl">— With all my love</div>
-</div>
-<div class="w-full md:w-1/2 relative">
-<img alt="Warm Light" class="rounded-lg shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700" data-alt="Golden sunlight streaming through a window onto a soft linen blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADk317pGy70erjSxEDaApOcC7tCVyPa1Zb2z6_UbxzqbNP00sBVM0aYleJ-WnctV1ad-j-rf9dE73KpRRG2yW8At_g_bZZTITNibEsZhF7rRlYspZpSmq2aZu8rc_RHH0gmwCL1DGOzV-DqbK1mQqVOqKgExL7Yc_IvGX-K9Xg2-X9e0m3kxAFb8WTh2X9whHQQyTRSMK_l6ZsSptPIZm2E4T2lheB3fYj1Ujluqm1WwT8fQUrl4zSDTGcn2TcQ9AAI8N_UuHYD-g"/>
-</div>
-</div>
-</section>
-<!-- Mood Tracker - Compact Card -->
-<section class="md:col-span-5 bg-surface-container-high rounded-xl p-8 flex flex-col justify-center">
-<h3 class="text-xl font-headline mb-6 text-center text-primary">How are you feeling, Ailsa?</h3>
-<div class="flex justify-around items-center">
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl">sentiment_very_satisfied</span>
-</div>
-<span class="text-[10px] font-label uppercase tracking-tighter text-outline">Radiant</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl">sentiment_satisfied</span>
-</div>
-<span class="text-[10px] font-label uppercase tracking-tighter text-outline">Peaceful</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl">sentiment_neutral</span>
-</div>
-<span class="text-[10px] font-label uppercase tracking-tighter text-outline">Tired</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl">spa</span>
-</div>
-<span class="text-[10px] font-label uppercase tracking-tighter text-outline">Grounded</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl">bedtime</span>
-</div>
-<span class="text-[10px] font-label uppercase tracking-tighter text-outline">Dreamy</span>
-</button>
-</div>
-</section>
-</div>
-<!-- Footer Decoration -->
-<footer class="mt-32 text-center pb-12">
-<div class="w-24 h-[1px] bg-outline-variant/30 mx-auto mb-8"></div>
-<div class="text-rose-900/40 font-headline italic text-lg mb-2">Little Light</div>
-<p class="text-xs font-label uppercase tracking-widest text-outline">Every day is a gift</p>
-</footer>
-</main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl w-[90%] max-w-md mx-auto rounded-full px-6 py-3 shadow-2xl shadow-rose-900/10 no-border tonal-shift-bg">
-<a class="flex flex-col items-center justify-center bg-rose-100 dark:bg-rose-900/40 text-rose-900 dark:text-rose-100 rounded-full px-5 py-2" href="#">
-<span class="material-symbols-outlined text-xl">home</span>
-<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium tracking-tight">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-2 hover:text-rose-600 dark:hover:text-rose-300 transition-all" href="#encouragement">
-<span class="material-symbols-outlined text-xl">favorite</span>
-<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium tracking-tight">Encouragement</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-2 hover:text-rose-600 dark:hover:text-rose-300 transition-all" href="#relax">
-<span class="material-symbols-outlined text-xl">spa</span>
-<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium tracking-tight">Relax</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-4 py-2 hover:text-rose-600 dark:hover:text-rose-300 transition-all" href="#week-14">
-<span class="material-symbols-outlined text-xl">child_care</span>
-<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-medium tracking-tight">Week 14</span>
-</a>
-</nav>
-</body></html>
+                    <div class="mt-5 flex items-center gap-3 text-sm text-on-surface-variant">
+                      <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-fixed text-primary">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                      </span>
+                      <span>For the quiet moments, the tired moments, and the beautiful in-between.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+        <section id="encouragement" class="group relative overflow-hidden rounded-[2rem] bg-surface-container-low p-7 shadow-soft md:p-10 lg:col-span-7">
+          <div class="absolute right-6 top-6 opacity-10 transition-opacity group-hover:opacity-20">
+            <span class="material-symbols-outlined text-[7rem]">format_quote</span>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-between gap-8">
+            <div>
+              <div class="text-xs uppercase tracking-[0.24em] text-outline">Daily Reflection</div>
+              <p id="encouragement-text" class="mt-8 max-w-2xl font-headline text-3xl italic leading-snug text-primary transition-all duration-500 md:text-4xl">
+                You are growing life with quiet strength. Your body is a sanctuary of love and infinite potential.
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-11 w-11 items-center justify-center rounded-full bg-primary-fixed">
+                  <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                </div>
+                <span class="text-sm italic text-on-surface-variant">With all our love</span>
+              </div>
+              <button id="next-message" class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-rose-50">
+                <span class="material-symbols-outlined">refresh</span>
+                Next Message
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="week-14" class="relative overflow-hidden rounded-[2rem] bg-secondary-container p-7 text-on-secondary-container shadow-soft md:p-8 lg:col-span-5">
+          <div class="absolute -bottom-10 -right-8 opacity-20 rotate-12">
+            <span class="material-symbols-outlined text-[11rem]">child_care</span>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-between gap-7">
+            <div>
+              <div class="text-6xl font-headline font-light">14</div>
+              <div class="text-xl font-headline italic opacity-80">Weeks Pregnant</div>
+              <p class="mt-6 max-w-sm text-lg leading-relaxed">
+                A beautiful stage of growth, where energy may begin to return and tiny new rhythms start to feel real.
+              </p>
+            </div>
+            <div class="space-y-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-xs uppercase tracking-[0.24em] opacity-70">
+                  <span>Journey Progress</span>
+                  <span>35%</span>
+                </div>
+                <div class="h-2 overflow-hidden rounded-full bg-black/10">
+                  <div class="h-full w-[35%] rounded-full bg-on-secondary-container"></div>
+                </div>
+              </div>
+              <div class="rounded-[1.5rem] border border-white/30 bg-white/30 p-4 backdrop-blur-md">
+                <div class="text-xs uppercase tracking-[0.22em] opacity-65">Little One's Size</div>
+                <div class="mt-2 text-xl font-headline italic">As sweet and small as a lemon.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="relax" class="rounded-[2rem] bg-surface-container-highest p-7 text-center shadow-soft md:p-8 lg:col-span-6">
+          <div class="mx-auto flex max-w-md flex-col items-center gap-6">
+            <div>
+              <h3 class="text-3xl font-headline text-primary">Gentle Breath</h3>
+              <p class="mt-2 text-sm text-on-surface-variant">Follow the bloom and breathe at an easy pace.</p>
+            </div>
+            <div class="relative flex items-center justify-center py-2">
+              <div class="absolute h-56 w-56 rounded-full bg-primary-container/40 blur-3xl animate-breathe"></div>
+              <div class="relative flex h-44 w-44 items-center justify-center rounded-full border border-primary/20 bg-white/40">
+                <div id="breath-circle" class="animate-breathe flex h-32 w-32 items-center justify-center rounded-full bg-primary-fixed text-center text-lg font-medium italic text-primary shadow-soft">
+                  Inhale
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div id="breath-instruction" class="text-xl font-headline italic text-primary">Inhale gently</div>
+              <div class="text-xs uppercase tracking-[0.26em] text-outline">4 seconds inhale • 4 seconds hold • 6 seconds exhale</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="petal-card" class="relative overflow-hidden rounded-[2rem] bg-white p-7 shadow-soft md:p-8 lg:col-span-6">
+          <div class="mb-5">
+            <h3 class="text-3xl font-headline text-primary">Petal Tapping</h3>
+            <p class="mt-2 text-sm text-on-surface-variant">Tap anywhere in this card and let a kind thought float upward.</p>
+          </div>
+          <div id="petal-field" class="relative min-h-[320px] cursor-pointer overflow-hidden rounded-[1.75rem] border border-rose-100 bg-gradient-to-br from-rose-50 via-white to-emerald-50">
+            <div class="absolute left-[18%] top-10 h-12 w-12 rounded-full bg-primary-fixed/50 blur-sm animate-drift"></div>
+            <div class="absolute bottom-16 right-[22%] h-16 w-16 rounded-full bg-secondary-container/60 blur-sm animate-drift" style="animation-delay: -2s"></div>
+            <div class="absolute left-1/2 top-1/2 h-8 w-8 rounded-full bg-surface-container-high/80 blur-sm animate-drift" style="animation-delay: -4s"></div>
+            <div class="pointer-events-none absolute inset-0 flex items-center justify-center px-8 text-center text-on-surface-variant/50 italic">
+              Tap to release kindness
+            </div>
+          </div>
+        </section>
+
+        <section id="love-note" class="relative overflow-hidden rounded-[2rem] bg-surface-container p-7 shadow-soft md:p-10 lg:col-span-7">
+          <div class="grid gap-8 md:grid-cols-2 md:items-center">
+            <div>
+              <h3 class="text-3xl font-headline italic text-primary">A Note for You</h3>
+              <p class="mt-6 text-lg font-light leading-relaxed italic text-on-surface-variant">
+                “Thank you for everything you are doing for our little family. Seeing your strength and grace as you grow our little light fills my heart with so much gratitude. You are the heartbeat of our home.”
+              </p>
+              <div class="mt-8 text-xl font-headline text-primary">— With all my love</div>
+            </div>
+            <div class="relative">
+              <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.75rem] bg-primary-fixed/50 blur-2xl"></div>
+              <img
+                alt="Warm Light"
+                class="relative rounded-[1.75rem] shadow-glow transition duration-700 hover:rotate-0 md:rotate-2"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADk317pGy70erjSxEDaApOcC7tCVyPa1Zb2z6_UbxzqbNP00sBVM0aYleJ-WnctV1ad-j-rf9dE73KpRRG2yW8At_g_bZZTITNibEsZhF7rRlYspZpSmq2aZu8rc_RHH0gmwCL1DGOzV-DqbK1mQqVOqKgExL7Yc_IvGX-K9Xg2-X9e0m3kxAFb8WTh2X9whHQQyTRSMK_l6ZsSptPIZm2E4T2lheB3fYj1Ujluqm1WwT8fQUrl4zSDTGcn2TcQ9AAI8N_UuHYD-g"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-[2rem] bg-surface-container-high p-7 shadow-soft md:p-8 lg:col-span-5">
+          <div class="text-center">
+            <h3 class="text-2xl font-headline text-primary">How are you feeling, Ailsa?</h3>
+            <p id="mood-feedback" class="mt-3 text-sm text-on-surface-variant">Choose the one that feels closest right now.</p>
+          </div>
+          <div class="mt-7 grid grid-cols-3 gap-3 sm:grid-cols-5">
+            <button data-mood="Radiant" class="mood-btn group flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-primary-container">
+                <span class="material-symbols-outlined text-2xl text-primary">sentiment_very_satisfied</span>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-outline">Radiant</span>
+            </button>
+            <button data-mood="Peaceful" class="mood-btn group flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-primary-container">
+                <span class="material-symbols-outlined text-2xl text-primary">sentiment_satisfied</span>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-outline">Peaceful</span>
+            </button>
+            <button data-mood="Tired" class="mood-btn group flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-primary-container">
+                <span class="material-symbols-outlined text-2xl text-primary">sentiment_neutral</span>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-outline">Tired</span>
+            </button>
+            <button data-mood="Grounded" class="mood-btn group flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-primary-container">
+                <span class="material-symbols-outlined text-2xl text-primary">spa</span>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-outline">Grounded</span>
+            </button>
+            <button data-mood="Dreamy" class="mood-btn group col-span-2 flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60 sm:col-span-1">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-primary-container">
+                <span class="material-symbols-outlined text-2xl text-primary">bedtime</span>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-outline">Dreamy</span>
+            </button>
+          </div>
+          <div class="mt-6 rounded-[1.5rem] border border-white/60 bg-white/55 p-4 text-sm text-on-surface-variant">
+            <div class="font-medium text-on-surface">Private little note</div>
+            <div class="mt-1">Your selection is only saved in this browser so the page can welcome you more personally next time.</div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="pb-8 pt-16 text-center sm:pt-20">
+        <div class="mx-auto mb-7 h-px w-24 bg-outline-variant/40"></div>
+        <div class="text-lg font-headline italic text-rose-900/50">Little Light</div>
+        <p class="mt-2 text-xs uppercase tracking-[0.28em] text-outline">Every day is a gift</p>
+      </footer>
+    </main>
+
+    <nav class="glass-panel fixed bottom-5 left-1/2 z-50 flex w-[92%] max-w-md -translate-x-1/2 items-center justify-around rounded-full border border-white/60 px-4 py-2 shadow-glow md:hidden">
+      <a class="flex flex-col items-center rounded-full bg-rose-100 px-4 py-2 text-rose-900" href="#top">
+        <span class="material-symbols-outlined text-xl">home</span>
+        <span class="text-[11px] font-medium tracking-tight">Home</span>
+      </a>
+      <a class="flex flex-col items-center px-3 py-2 text-zinc-500 transition hover:text-rose-600" href="#encouragement">
+        <span class="material-symbols-outlined text-xl">favorite</span>
+        <span class="text-[11px] font-medium tracking-tight">Encourage</span>
+      </a>
+      <a class="flex flex-col items-center px-3 py-2 text-zinc-500 transition hover:text-rose-600" href="#relax">
+        <span class="material-symbols-outlined text-xl">spa</span>
+        <span class="text-[11px] font-medium tracking-tight">Relax</span>
+      </a>
+      <a class="flex flex-col items-center px-3 py-2 text-zinc-500 transition hover:text-rose-600" href="#love-note">
+        <span class="material-symbols-outlined text-xl">auto_awesome</span>
+        <span class="text-[11px] font-medium tracking-tight">Note</span>
+      </a>
+    </nav>
+
+    <script>
+      const encouragements = [
+        "You are growing life with quiet strength. Your body is a sanctuary of love and infinite potential.",
+        "Even on slower days, you are still doing something extraordinary—loving, carrying, and becoming.",
+        "Rest is not a pause from the journey. Rest is part of how you care for both yourself and your little one.",
+        "There is beauty in your softness, power in your patience, and grace in the way you keep showing up.",
+        "Your gentleness is not small. It is the atmosphere our little light already gets to grow inside."
+      ];
+
+      const microNotes = [
+        "Rest is not falling behind. It is part of how love makes room for new life.",
+        "Some days bloom quietly. They still count.",
+        "You do not need to be productive to be precious.",
+        "Breathe slowly. The day can soften around you.",
+        "Small comforts become big kindness when your body is doing so much."
+      ];
+
+      const petalMessages = [
+        "You are safe here",
+        "One breath at a time",
+        "Soft is strong",
+        "You are held",
+        "You are doing enough",
+        "Love is growing"
+      ];
+
+      let currentEncouragement = 0;
+      let currentMicroNote = 0;
+      const encouragementText = document.getElementById("encouragement-text");
+      const microNote = document.getElementById("micro-note");
+      const nextMessageBtn = document.getElementById("next-message");
+
+      function rotateEncouragement() {
+        currentEncouragement = (currentEncouragement + 1) % encouragements.length;
+        encouragementText.style.opacity = "0.2";
+        setTimeout(() => {
+          encouragementText.textContent = encouragements[currentEncouragement];
+          encouragementText.style.opacity = "1";
+        }, 180);
+      }
+
+      function rotateMicroNote() {
+        currentMicroNote = (currentMicroNote + 1) % microNotes.length;
+        microNote.textContent = microNotes[currentMicroNote];
+      }
+
+      nextMessageBtn.addEventListener("click", rotateEncouragement);
+      setInterval(rotateMicroNote, 7000);
+
+      const breathInstruction = document.getElementById("breath-instruction");
+      const breathCircle = document.getElementById("breath-circle");
+      const breathSteps = [
+        { label: "Inhale", text: "Inhale gently", ms: 4000 },
+        { label: "Hold", text: "Hold softly", ms: 4000 },
+        { label: "Exhale", text: "Exhale slowly", ms: 6000 }
+      ];
+      let breathIndex = 0;
+      function runBreathCycle() {
+        const step = breathSteps[breathIndex];
+        breathCircle.textContent = step.label;
+        breathInstruction.textContent = step.text;
+        breathIndex = (breathIndex + 1) % breathSteps.length;
+        setTimeout(runBreathCycle, step.ms);
+      }
+      setTimeout(runBreathCycle, breathSteps[0].ms);
+
+      const petalField = document.getElementById("petal-field");
+      petalField.addEventListener("click", (event) => {
+        const rect = petalField.getBoundingClientRect();
+        const burst = document.createElement("div");
+        burst.className = "petal-burst rounded-full bg-white/80 px-4 py-2 text-sm italic text-primary";
+        burst.textContent = petalMessages[Math.floor(Math.random() * petalMessages.length)];
+        burst.style.left = `${event.clientX - rect.left - 40}px`;
+        burst.style.top = `${event.clientY - rect.top - 12}px`;
+        petalField.appendChild(burst);
+        setTimeout(() => burst.remove(), 2600);
+      });
+
+      const moodButtons = document.querySelectorAll(".mood-btn");
+      const moodFeedback = document.getElementById("mood-feedback");
+      const moodResponses = {
+        Radiant: "Radiant suits you. Hold onto that glow for a while.",
+        Peaceful: "Peaceful is beautiful. Let today stay gentle.",
+        Tired: "Then today can be softer. You do not need to force brightness.",
+        Grounded: "Grounded feels good. Keep following that calm.",
+        Dreamy: "Dreamy is welcome here. Float a little."
+      };
+
+      function applyMood(mood) {
+        moodButtons.forEach((btn) => {
+          const active = btn.dataset.mood === mood;
+          btn.classList.toggle("bg-white/70", active);
+          btn.classList.toggle("shadow-sm", active);
+        });
+        moodFeedback.textContent = moodResponses[mood] || "Choose the one that feels closest right now.";
+      }
+
+      moodButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const mood = button.dataset.mood;
+          localStorage.setItem("littleLightMood", mood);
+          applyMood(mood);
+        });
+      });
+
+      const savedMood = localStorage.getItem("littleLightMood");
+      if (savedMood) applyMood(savedMood);
+
+      let audioCtx;
+      let masterGain;
+      let ambientInterval;
+      let musicOn = false;
+      const musicToggle = document.getElementById("music-toggle");
+
+      function playSoftChord() {
+        if (!audioCtx || !masterGain) return;
+        const now = audioCtx.currentTime;
+        const notes = [261.63, 329.63, 392.0];
+        notes.forEach((freq, i) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = freq / (i === 2 ? 2 : 1);
+          gain.gain.setValueAtTime(0.0001, now);
+          gain.gain.exponentialRampToValueAtTime(0.018, now + 0.8);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.8);
+          osc.connect(gain).connect(masterGain);
+          osc.start(now);
+          osc.stop(now + 5);
+        });
+      }
+
+      async function toggleMusic() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = 0.6;
+          masterGain.connect(audioCtx.destination);
+        }
+        if (audioCtx.state === "suspended") await audioCtx.resume();
+
+        musicOn = !musicOn;
+        musicToggle.innerHTML = `<span class="material-symbols-outlined">${musicOn ? "music_off" : "music_note"}</span>`;
+        musicToggle.classList.toggle("bg-primary", musicOn);
+        musicToggle.classList.toggle("text-white", musicOn);
+
+        if (musicOn) {
+          playSoftChord();
+          ambientInterval = setInterval(playSoftChord, 5200);
+        } else {
+          clearInterval(ambientInterval);
+        }
+      }
+
+      musicToggle.addEventListener("click", toggleMusic);
+    </script>
+  </body>
+</html>
