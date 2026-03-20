@@ -78,6 +78,13 @@
           radial-gradient(circle at 85% 10%, rgba(216, 226, 220, 0.55), transparent 24%),
           linear-gradient(180deg, #fffaf7 0%, #fff8f5 45%, #fff5f1 100%);
       }
+      html.dark body {
+        background:
+          radial-gradient(circle at top left, rgba(113, 89, 84, 0.35), transparent 25%),
+          radial-gradient(circle at 85% 10%, rgba(87, 97, 92, 0.28), transparent 20%),
+          linear-gradient(180deg, #1d1816 0%, #211b19 45%, #281f1d 100%);
+        color: #f8efea;
+      }
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
       }
@@ -128,17 +135,20 @@
       }
     </style>
   </head>
-  <body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+  <body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container dark:text-inverse-on-surface">
     <header class="sticky top-0 z-50 mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6 lg:px-10">
-      <div class="glass-panel flex w-full items-center justify-between rounded-full border border-white/60 px-4 py-3 shadow-soft sm:px-6">
-        <div class="text-xl font-headline italic text-rose-900 sm:text-2xl">Little Light</div>
+      <div class="glass-panel flex w-full items-center justify-between rounded-full border border-white/60 px-4 py-3 shadow-soft dark:border-white/10 dark:bg-white/5 sm:px-6">
+        <div class="text-xl font-headline italic text-rose-900 dark:text-rose-100 sm:text-2xl">Little Light</div>
         <nav class="hidden items-center gap-2 md:flex">
-          <a class="rounded-full px-4 py-2 font-label text-sm font-semibold tracking-tight text-rose-900 transition hover:bg-rose-50/70" href="#top">Home</a>
-          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#encouragement">Encouragement</a>
-          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#relax">Relax</a>
-          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70" href="#love-note">Love Note</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm font-semibold tracking-tight text-rose-900 transition hover:bg-rose-50/70 dark:hover:bg-white/10 dark:text-rose-100" href="#top">Home</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70 dark:hover:bg-white/10 dark:text-rose-200/80" href="#encouragement">Encouragement</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70 dark:hover:bg-white/10 dark:text-rose-200/80" href="#relax">Relax</a>
+          <a class="rounded-full px-4 py-2 font-label text-sm tracking-tight text-rose-700/80 transition hover:bg-rose-50/70 dark:hover:bg-white/10 dark:text-rose-200/80" href="#love-note">Love Note</a>
         </nav>
         <div class="flex items-center gap-2 sm:gap-3">
+          <button id="theme-toggle" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/80 text-rose-700 shadow-sm transition hover:scale-105 hover:bg-white" aria-label="Toggle theme">
+            <span class="material-symbols-outlined">dark_mode</span>
+          </button>
           <button id="music-toggle" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/80 text-rose-700 shadow-sm transition hover:scale-105 hover:bg-white" aria-label="Toggle gentle soundscape">
             <span class="material-symbols-outlined">music_note</span>
           </button>
@@ -155,17 +165,17 @@
       <section class="relative overflow-hidden pt-6 sm:pt-10 lg:pt-14">
         <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div class="relative z-10 max-w-2xl space-y-7 py-6 sm:py-10 lg:py-16">
-            <div class="inline-flex items-center gap-2 rounded-full bg-primary-fixed/60 px-4 py-2 text-sm font-medium text-primary shadow-sm animate-drift">
+            <div id="pregnancy-chip" class="inline-flex items-center gap-2 rounded-full bg-primary-fixed/60 px-4 py-2 text-sm font-medium text-primary shadow-sm animate-drift dark:bg-white/10 dark:text-rose-100">
               <span class="h-2 w-2 animate-pulse rounded-full bg-primary"></span>
-              Week 14 • Second Trimester • Growing beautifully
+              Loading your chapter...
             </div>
             <div class="space-y-5">
-              <h1 class="text-5xl leading-[0.95] tracking-tight text-on-surface sm:text-6xl lg:text-7xl xl:text-[5.4rem] font-headline">
+              <h1 class="text-5xl leading-[0.95] tracking-tight text-on-surface dark:text-inverse-on-surface sm:text-6xl lg:text-7xl xl:text-[5.4rem] font-headline">
                 Hi Ailsa,<br />
-                <span class="font-light italic">you are doing beautifully.</span>
+                <span class="font-light italic">I made this for you.</span>
               </h1>
-              <p class="max-w-xl text-lg font-light leading-relaxed text-on-surface-variant sm:text-xl">
-                For you and our little one, with love. This little corner is here to offer a soft pause—something gentle, encouraging, and calm whenever you need it.
+              <p class="max-w-xl text-lg font-light leading-relaxed text-on-surface-variant dark:text-rose-100/75 sm:text-xl">
+                For the quieter moments, the tired moments, and the beautiful moments in between. I wanted you to have a small place that feels soft, loving, and close to me whenever you open it.
               </p>
             </div>
             <div class="flex flex-wrap gap-3 sm:gap-4">
@@ -173,17 +183,17 @@
               <a class="glass-panel rounded-full border border-white/50 px-7 py-4 font-medium text-on-surface transition hover:bg-white/85" href="#relax">Take a Gentle Break</a>
             </div>
             <div class="grid gap-3 pt-3 sm:grid-cols-3">
-              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
-                <div class="text-xs uppercase tracking-[0.22em] text-outline">Today’s tone</div>
-                <div class="mt-2 font-headline text-2xl italic text-primary">Soft & steady</div>
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
+                <div class="text-xs uppercase tracking-[0.22em] text-outline dark:text-rose-100/45">Today’s tone</div>
+                <div class="mt-2 font-headline text-2xl italic text-primary dark:text-rose-100">Soft & steady</div>
               </div>
-              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
-                <div class="text-xs uppercase tracking-[0.22em] text-outline">Breathing</div>
-                <div class="mt-2 text-base font-medium text-on-surface">4 • 4 • 6 slow rhythm</div>
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
+                <div class="text-xs uppercase tracking-[0.22em] text-outline dark:text-rose-100/45">Breathing</div>
+                <div class="mt-2 text-base font-medium text-on-surface dark:text-inverse-on-surface">4 • 4 • 6 slow rhythm</div>
               </div>
-              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft">
-                <div class="text-xs uppercase tracking-[0.22em] text-outline">Saved with care</div>
-                <div class="mt-2 text-base font-medium text-on-surface">Mood check stays on this device</div>
+              <div class="glass-panel rounded-3xl border border-white/60 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
+                <div id="countdown-label" class="text-xs uppercase tracking-[0.22em] text-outline dark:text-rose-100/45">Countdown</div>
+                <div id="countdown-value" class="mt-2 text-base font-medium text-on-surface dark:text-inverse-on-surface">Loading…</div>
               </div>
             </div>
           </div>
@@ -199,21 +209,21 @@
                 />
                 <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/10 to-white/70"></div>
                 <div class="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                  <div class="glass-panel rounded-[1.75rem] border border-white/60 p-5 shadow-soft sm:p-6">
+                  <div class="glass-panel rounded-[1.75rem] border border-white/60 p-5 shadow-soft dark:border-white/10 dark:bg-black/15 sm:p-6">
                     <div class="flex items-start justify-between gap-4">
                       <div>
-                        <div class="text-xs uppercase tracking-[0.22em] text-outline">Little light journal</div>
-                        <p id="micro-note" class="mt-3 max-w-md text-base leading-relaxed text-on-surface-variant animate-pulse-text">
-                          Rest is not falling behind. It is part of how love makes room for new life.
+                        <div class="text-xs uppercase tracking-[0.22em] text-outline dark:text-rose-100/45">A note from me</div>
+                        <p id="micro-note" class="mt-3 max-w-md text-base leading-relaxed text-on-surface-variant animate-pulse-text dark:text-rose-100/75">
+                          I hope whenever you open this, you feel a little more held.
                         </p>
                       </div>
-                      <div class="rounded-full bg-rose-50/80 px-3 py-1 text-xs font-medium text-rose-700">Updated daily</div>
+                      <div class="rounded-full bg-rose-50/80 px-3 py-1 text-xs font-medium text-rose-700 dark:bg-white/10 dark:text-rose-100">For you</div>
                     </div>
                     <div class="mt-5 flex items-center gap-3 text-sm text-on-surface-variant">
                       <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-fixed text-primary">
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
                       </span>
-                      <span>For the quiet moments, the tired moments, and the beautiful in-between.</span>
+                      <span>I know I can’t carry this chapter for you, but I want to make it feel softer wherever I can.</span>
                     </div>
                   </div>
                 </div>
@@ -228,32 +238,32 @@
           <div class="aurora-line absolute inset-x-0 top-0 h-px"></div>
           <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr_0.8fr] lg:items-center">
             <div>
-              <div class="text-xs uppercase tracking-[0.24em] text-outline">A little time capsule</div>
-              <h2 class="mt-3 font-headline text-3xl italic text-primary">For this chapter of your life</h2>
-              <p class="mt-4 max-w-md text-base leading-relaxed text-on-surface-variant">
-                Not just a page to look at — a soft record of this season, the tenderness of it, and the quiet love surrounding you while everything changes.
+              <div class="text-xs uppercase tracking-[0.24em] text-outline dark:text-rose-100/45">A little time capsule</div>
+              <h2 class="mt-3 font-headline text-3xl italic text-primary dark:text-rose-100">For this chapter of our life</h2>
+              <p class="mt-4 max-w-md text-base leading-relaxed text-on-surface-variant dark:text-rose-100/75">
+                I didn’t want this season to pass by as just appointments, calendars, and tired evenings. I wanted there to be one small place that says: I see you, I love you, and this matters.
               </p>
             </div>
             <div class="grid gap-4 sm:grid-cols-3">
-              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5">
-                <div class="text-xs uppercase tracking-[0.18em] text-outline">This week</div>
-                <div class="mt-2 font-headline text-2xl italic text-primary">More real</div>
-                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">The journey begins to feel more visible, more embodied, and more full of anticipation.</p>
+              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5 dark:border-white/10 dark:bg-white/5">
+                <div class="text-xs uppercase tracking-[0.18em] text-outline dark:text-rose-100/45">This week</div>
+                <div class="mt-2 font-headline text-2xl italic text-primary dark:text-rose-100">More real</div>
+                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant dark:text-rose-100/72">It feels less abstract now. More like we’re already getting closer to meeting the little one we talk about.</p>
               </div>
-              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5">
-                <div class="text-xs uppercase tracking-[0.18em] text-outline">A reminder</div>
-                <div class="mt-2 font-headline text-2xl italic text-primary">Be gentle</div>
-                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">You do not have to perform strength every day. Being cared for is part of the story too.</p>
+              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5 dark:border-white/10 dark:bg-white/5">
+                <div class="text-xs uppercase tracking-[0.18em] text-outline dark:text-rose-100/45">A reminder</div>
+                <div class="mt-2 font-headline text-2xl italic text-primary dark:text-rose-100">Let me hold more</div>
+                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant dark:text-rose-100/72">You do not have to be brave every minute. On the heavier days, I want this page to remind you that you’re not doing any of this alone.</p>
               </div>
-              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5">
-                <div class="text-xs uppercase tracking-[0.18em] text-outline">Little light</div>
-                <div class="mt-2 font-headline text-2xl italic text-primary">Already loved</div>
-                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant">Before the first cry, before the first step — already adored, already awaited, already home.</p>
+              <div class="memory-card rounded-[1.5rem] border border-white/70 p-5 dark:border-white/10 dark:bg-white/5">
+                <div class="text-xs uppercase tracking-[0.18em] text-outline dark:text-rose-100/45">Little light</div>
+                <div class="mt-2 font-headline text-2xl italic text-primary dark:text-rose-100">Already ours</div>
+                <p class="mt-3 text-sm leading-relaxed text-on-surface-variant dark:text-rose-100/72">Before the first cry, before the first step, before the first tiny hand in ours — already wanted, already known, already deeply loved.</p>
               </div>
             </div>
-            <div class="rounded-[1.75rem] bg-surface-container p-5 shadow-soft">
-              <div class="text-xs uppercase tracking-[0.22em] text-outline">Today’s welcome</div>
-              <p id="welcome-line" class="mt-4 font-headline text-2xl italic leading-relaxed text-primary">May this space feel like a deep breath, a warm hand, and a quiet little smile.</p>
+            <div class="rounded-[1.75rem] bg-surface-container p-5 shadow-soft dark:bg-white/5">
+              <div class="text-xs uppercase tracking-[0.22em] text-outline dark:text-rose-100/45">Today’s welcome</div>
+              <p id="welcome-line" class="mt-4 font-headline text-2xl italic leading-relaxed text-primary dark:text-rose-100">May this space feel like a deep breath, a warm hand, and a quiet little smile.</p>
             </div>
           </div>
         </section>
@@ -264,9 +274,9 @@
           </div>
           <div class="relative z-10 flex h-full flex-col justify-between gap-8">
             <div>
-              <div class="text-xs uppercase tracking-[0.24em] text-outline">Daily Reflection</div>
-              <p id="encouragement-text" class="mt-8 max-w-2xl font-headline text-3xl italic leading-snug text-primary transition-all duration-500 md:text-4xl">
-                You are growing life with quiet strength. Your body is a sanctuary of love and infinite potential.
+              <div class="text-xs uppercase tracking-[0.24em] text-outline dark:text-rose-100/45">A little thing I want you to hear today</div>
+              <p id="encouragement-text" class="mt-8 max-w-2xl font-headline text-3xl italic leading-snug text-primary transition-all duration-500 dark:text-rose-100 md:text-4xl">
+                Watching you go through this makes me love you even more. You are doing something incredible, even on the days that feel ordinary.
               </p>
             </div>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -274,7 +284,7 @@
                 <div class="flex h-11 w-11 items-center justify-center rounded-full bg-primary-fixed">
                   <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">favorite</span>
                 </div>
-                <span class="text-sm italic text-on-surface-variant">With all our love</span>
+                <span class="text-sm italic text-on-surface-variant dark:text-rose-100/70">With all my love</span>
               </div>
               <button id="next-message" class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-rose-50">
                 <span class="material-symbols-outlined">refresh</span>
@@ -290,9 +300,9 @@
           </div>
           <div class="relative z-10 flex h-full flex-col justify-between gap-7">
             <div>
-              <div class="text-6xl font-headline font-light">14</div>
-              <div class="text-xl font-headline italic opacity-80">Weeks Pregnant</div>
-              <p class="mt-6 max-w-sm text-lg leading-relaxed">
+              <div id="week-number" class="text-6xl font-headline font-light">27</div>
+              <div id="week-label" class="text-xl font-headline italic opacity-80">Weeks Pregnant</div>
+              <p id="week-description" class="mt-6 max-w-sm text-lg leading-relaxed">
                 A beautiful stage of growth, where energy may begin to return and tiny new rhythms start to feel real.
               </p>
             </div>
@@ -300,15 +310,15 @@
               <div>
                 <div class="mb-2 flex items-center justify-between text-xs uppercase tracking-[0.24em] opacity-70">
                   <span>Journey Progress</span>
-                  <span>35%</span>
+                  <span id="journey-progress-label">67%</span>
                 </div>
                 <div class="h-2 overflow-hidden rounded-full bg-black/10">
-                  <div class="h-full w-[35%] rounded-full bg-on-secondary-container"></div>
+                  <div id="journey-progress-bar" class="h-full w-[67%] rounded-full bg-on-secondary-container"></div>
                 </div>
               </div>
               <div class="rounded-[1.5rem] border border-white/30 bg-white/30 p-4 backdrop-blur-md">
-                <div class="text-xs uppercase tracking-[0.22em] opacity-65">Little One's Size</div>
-                <div class="mt-2 text-xl font-headline italic">As sweet and small as a lemon.</div>
+                <div class="text-xs uppercase tracking-[0.22em] opacity-65">Countdown</div>
+                <div id="due-countdown" class="mt-2 text-xl font-headline italic">Loading until 13 Sep 2026…</div>
               </div>
             </div>
           </div>
@@ -317,8 +327,8 @@
         <section id="relax" class="rounded-[2rem] bg-surface-container-highest p-7 text-center shadow-soft md:p-8 lg:col-span-6">
           <div class="mx-auto flex max-w-md flex-col items-center gap-6">
             <div>
-              <h3 class="text-3xl font-headline text-primary">Gentle Breath</h3>
-              <p class="mt-2 text-sm text-on-surface-variant">Follow the bloom and breathe at an easy pace.</p>
+              <h3 class="text-3xl font-headline text-primary dark:text-rose-100">Gentle Breath</h3>
+              <p class="mt-2 text-sm text-on-surface-variant dark:text-rose-100/72">If today feels full, let’s slow it down together for a minute.</p>
             </div>
             <div class="relative flex items-center justify-center py-2">
               <div class="absolute h-56 w-56 rounded-full bg-primary-container/40 blur-3xl animate-breathe"></div>
@@ -337,8 +347,8 @@
 
         <section id="petal-card" class="relative overflow-hidden rounded-[2rem] bg-white p-7 shadow-soft md:p-8 lg:col-span-6">
           <div class="mb-5">
-            <h3 class="text-3xl font-headline text-primary">Petal Tapping</h3>
-            <p class="mt-2 text-sm text-on-surface-variant">Tap anywhere in this card and let a kind thought float upward.</p>
+            <h3 class="text-3xl font-headline text-primary dark:text-rose-100">Petal Tapping</h3>
+            <p class="mt-2 text-sm text-on-surface-variant dark:text-rose-100/72">Tap anywhere in this card and let a little reminder drift up to meet you.</p>
           </div>
           <div id="petal-field" class="relative min-h-[320px] cursor-pointer overflow-hidden rounded-[1.75rem] border border-rose-100 bg-gradient-to-br from-rose-50 via-white to-emerald-50">
             <div class="absolute left-[18%] top-10 h-12 w-12 rounded-full bg-primary-fixed/50 blur-sm animate-drift"></div>
@@ -353,14 +363,14 @@
         <section id="love-note" class="relative overflow-hidden rounded-[2rem] bg-surface-container p-7 shadow-soft md:p-10 lg:col-span-7">
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
-              <h3 class="text-3xl font-headline italic text-primary">A Note for You</h3>
-              <p class="mt-6 text-lg font-light leading-relaxed italic text-on-surface-variant">
-                “Thank you for everything you are doing for our little family. Seeing your strength and grace as you grow our little light fills my heart with so much gratitude. You are the heartbeat of our home.”
+              <h3 class="text-3xl font-headline italic text-primary dark:text-rose-100">A Note for You</h3>
+              <p class="mt-6 text-lg font-light leading-relaxed italic text-on-surface-variant dark:text-rose-100/78">
+                “I know this season asks a lot from you — physically, emotionally, quietly, every single day. I just want you to know that I see it. I see how much you’re carrying, how much love is already inside you, and how beautiful you are in all of it.”
               </p>
-              <div class="mt-8 text-xl font-headline text-primary">— With all my love</div>
+              <div class="mt-8 text-xl font-headline text-primary dark:text-rose-100">— Hugo</div>
               <div class="mt-8 rounded-[1.5rem] border border-white/70 bg-white/55 p-5 text-sm leading-relaxed text-on-surface-variant">
-                <div class="text-xs uppercase tracking-[0.18em] text-outline">A promise</div>
-                <p class="mt-3">On tired days, this page can be a soft place. On happy days, it can hold the glow a little longer. On ordinary days, it can simply remind you how loved you are.</p>
+                <div class="text-xs uppercase tracking-[0.18em] text-outline dark:text-rose-100/45">A promise</div>
+                <p class="mt-3 dark:text-rose-100/75">On the tired days, I want to be gentler with you. On the brighter days, I want to celebrate them with you. And on the in-between days, I want you to remember that none of this is unnoticed.</p>
               </div>
             </div>
             <div class="relative">
@@ -376,8 +386,8 @@
 
         <section class="rounded-[2rem] bg-surface-container-high p-7 shadow-soft md:p-8 lg:col-span-5">
           <div class="text-center">
-            <h3 class="text-2xl font-headline text-primary">How are you feeling, Ailsa?</h3>
-            <p id="mood-feedback" class="mt-3 text-sm text-on-surface-variant">Choose the one that feels closest right now.</p>
+            <h3 class="text-2xl font-headline text-primary dark:text-rose-100">How are you feeling, Ailsa?</h3>
+            <p id="mood-feedback" class="mt-3 text-sm text-on-surface-variant dark:text-rose-100/72">Choose the one that feels closest right now.</p>
           </div>
           <div class="mt-7 grid grid-cols-3 gap-3 sm:grid-cols-5">
             <button data-mood="Radiant" class="mood-btn group flex flex-col items-center gap-2 rounded-[1.5rem] p-2 transition hover:bg-white/60">
@@ -412,8 +422,8 @@
             </button>
           </div>
           <div class="mt-6 rounded-[1.5rem] border border-white/60 bg-white/55 p-4 text-sm text-on-surface-variant">
-            <div class="font-medium text-on-surface">Private little note</div>
-            <div class="mt-1">Your selection is only saved in this browser so the page can welcome you more personally next time.</div>
+            <div class="font-medium text-on-surface dark:text-inverse-on-surface">Private little note</div>
+            <div class="mt-1 dark:text-rose-100/72">Your selection is only saved in this browser so the page can feel a little more personal next time.</div>
           </div>
         </section>
       </section>
@@ -421,9 +431,9 @@
       <section class="mt-6 rounded-[2rem] border border-white/60 bg-white/45 p-7 shadow-soft md:p-8">
         <div class="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <div class="text-xs uppercase tracking-[0.24em] text-outline">A quiet guestbook</div>
-            <h3 class="mt-3 font-headline text-3xl italic text-primary">A few words for today</h3>
-            <p class="mt-4 max-w-md text-base leading-relaxed text-on-surface-variant">Leave a small note in this browser — a feeling, a hope, a tiny memory from today. It won’t go anywhere else.</p>
+            <div class="text-xs uppercase tracking-[0.24em] text-outline dark:text-rose-100/45">A quiet guestbook</div>
+            <h3 class="mt-3 font-headline text-3xl italic text-primary dark:text-rose-100">A few words for today</h3>
+            <p class="mt-4 max-w-md text-base leading-relaxed text-on-surface-variant dark:text-rose-100/72">Leave a small note in this browser — a feeling, a hope, a tiny memory from today. It won’t go anywhere else.</p>
           </div>
           <div class="rounded-[1.75rem] bg-surface-container p-5">
             <label class="text-xs uppercase tracking-[0.18em] text-outline" for="daily-note">Today I want to remember...</label>
@@ -467,19 +477,19 @@
 
     <script>
       const encouragements = [
-        "You are growing life with quiet strength. Your body is a sanctuary of love and infinite potential.",
-        "Even on slower days, you are still doing something extraordinary—loving, carrying, and becoming.",
-        "Rest is not a pause from the journey. Rest is part of how you care for both yourself and your little one.",
-        "There is beauty in your softness, power in your patience, and grace in the way you keep showing up.",
-        "Your gentleness is not small. It is the atmosphere our little light already gets to grow inside."
+        "Watching you go through this makes me love you even more. You are doing something incredible, even on the days that feel ordinary.",
+        "I know not every day feels glowing or graceful — but even then, you are still amazing to me.",
+        "If your body feels tired today, let that be enough reason to be softer with yourself. I already think you are doing beautifully.",
+        "You are carrying so much with such quiet strength. I hope you remember that you never have to carry it alone.",
+        "Our little one is lucky already, because they get you. And I’m lucky too."
       ];
 
       const microNotes = [
-        "Rest is not falling behind. It is part of how love makes room for new life.",
-        "Some days bloom quietly. They still count.",
-        "You do not need to be productive to be precious.",
-        "Breathe slowly. The day can soften around you.",
-        "Small comforts become big kindness when your body is doing so much."
+        "I hope whenever you open this, you feel a little more held.",
+        "If today was heavy, let this be one small gentle thing inside it.",
+        "You do not need to be productive to be precious to me.",
+        "I made this so a part of me could sit beside you, even quietly.",
+        "You are loved in the bright moments and in the tired ones too."
       ];
 
       const petalMessages = [
@@ -494,8 +504,8 @@
       const welcomeLines = [
         "May this space feel like a deep breath, a warm hand, and a quiet little smile.",
         "If today feels heavy, let this page be a softer place to land.",
-        "For this season of becoming — may you feel held, seen, and cherished.",
-        "You do not need to rush this chapter. It is already beautiful as it is."
+        "I made this because I wanted one place that always feels gentle with you.",
+        "You do not need to rush this chapter. I already love who you are inside it."
       ];
 
       let currentEncouragement = 0;
@@ -561,11 +571,11 @@
       const moodButtons = document.querySelectorAll(".mood-btn");
       const moodFeedback = document.getElementById("mood-feedback");
       const moodResponses = {
-        Radiant: "Radiant suits you. Hold onto that glow for a while.",
-        Peaceful: "Peaceful is beautiful. Let today stay gentle.",
-        Tired: "Then today can be softer. You do not need to force brightness.",
-        Grounded: "Grounded feels good. Keep following that calm.",
-        Dreamy: "Dreamy is welcome here. Float a little."
+        Radiant: "I love that. Hold onto the glow a little longer today.",
+        Peaceful: "Peaceful looks beautiful on you. Let the day stay soft.",
+        Tired: "Then let today be gentler. You do not need to push through for me.",
+        Grounded: "Good. Stay there a little longer if you can.",
+        Dreamy: "Then drift a little. I’ll still be here when you land."
       };
 
       function applyMood(mood) {
@@ -584,6 +594,37 @@
           applyMood(mood);
         });
       });
+
+      const dueDate = new Date("2026-09-13T00:00:00");
+      const today = new Date();
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const diffDaysRaw = Math.ceil((dueDate - today) / msPerDay);
+      const totalPregnancyDays = 280;
+      const conceptionEstimate = new Date(dueDate.getTime() - totalPregnancyDays * msPerDay);
+      const elapsedDays = Math.max(0, Math.floor((today - conceptionEstimate) / msPerDay));
+      const currentWeek = Math.max(1, Math.min(40, Math.floor(elapsedDays / 7) + 1));
+      const trimester = currentWeek <= 13 ? "First Trimester" : currentWeek <= 27 ? "Second Trimester" : "Third Trimester";
+      const progressPercent = Math.max(0, Math.min(100, Math.round((elapsedDays / totalPregnancyDays) * 100)));
+      const weeksRemaining = Math.max(0, Math.ceil(diffDaysRaw / 7));
+
+      document.getElementById("pregnancy-chip").lastChild.textContent = `Week ${currentWeek} • ${trimester} • Due 13 Sep 2026`;
+      document.getElementById("week-number").textContent = currentWeek;
+      document.getElementById("week-label").textContent = `Week ${currentWeek}`;
+      document.getElementById("journey-progress-label").textContent = `${progressPercent}%`;
+      document.getElementById("journey-progress-bar").style.width = `${progressPercent}%`;
+      document.getElementById("due-countdown").textContent = diffDaysRaw >= 0
+        ? `${diffDaysRaw} days to go • about ${weeksRemaining} weeks left`
+        : `Due day has passed — little one may already be here 💛`;
+      document.getElementById("countdown-value").textContent = diffDaysRaw >= 0
+        ? `${diffDaysRaw} days until due day`
+        : `Past due day by ${Math.abs(diffDaysRaw)} days`;
+
+      const descriptions = {
+        first: "The early foundations are being laid with so much care, change, and quiet courage.",
+        second: "This is often the chapter where things feel more real, more felt, and closer in a new way.",
+        third: "The finish line is getting nearer now — softer, heavier, more real, and full of anticipation."
+      };
+      document.getElementById("week-description").textContent = currentWeek <= 13 ? descriptions.first : currentWeek <= 27 ? descriptions.second : descriptions.third;
 
       const savedMood = localStorage.getItem("littleLightMood");
       if (savedMood) applyMood(savedMood);
@@ -609,6 +650,20 @@
         dailyNote.value = "";
         localStorage.removeItem("littleLightDailyNote");
         noteStatus.textContent = "Your note was cleared from this device.";
+      });
+
+      const htmlEl = document.documentElement;
+      const themeToggle = document.getElementById("theme-toggle");
+      const savedTheme = localStorage.getItem("littleLightTheme");
+      if (savedTheme === "dark") htmlEl.classList.add("dark");
+      function syncThemeIcon() {
+        themeToggle.innerHTML = `<span class="material-symbols-outlined">${htmlEl.classList.contains("dark") ? "light_mode" : "dark_mode"}</span>`;
+      }
+      syncThemeIcon();
+      themeToggle.addEventListener("click", () => {
+        htmlEl.classList.toggle("dark");
+        localStorage.setItem("littleLightTheme", htmlEl.classList.contains("dark") ? "dark" : "light");
+        syncThemeIcon();
       });
 
       let audioCtx;
